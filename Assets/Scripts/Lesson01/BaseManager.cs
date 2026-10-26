@@ -24,7 +24,6 @@ public class BaseManager<T> where T:class
                 else
                     Debug.Log("没有对应的无参构造函数");
             }
-            
             return instance;
         }
     }
