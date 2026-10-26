@@ -4,14 +4,13 @@
 
 - GitHub：[Unity-GameFramework-Learn](https://github.com/CyreneMine/Unity-GameFramework-Learn)
 - Unity：`6000.3.10f1`
-- 工程目录：`E:\UnityLearn\MyGameFrame`（仓库根目录就是 Unity 工程）
-- 本地教程：`E:\1aUnity教程\Unity程序基础框架（重置版）`
+- 工程结构：仓库根目录就是 Unity 工程。
 
 ## 文档导航
 
 | 文档 | 用途 |
 | --- | --- |
-| [逐 P 教程目录](Docs/教程目录.md) | 主线 P1–P77 与选修课，包含时长、内容概述、配套资料和选择栏 |
+| [逐 P 教程目录](Docs/教程目录.md) | 主线 P1–P77 与选修课，包含时长、内容概述和选择栏 |
 | [学习进度](LearningProgress.md) | 用户确认的学习范围、实际进度、验证记录与下一步 |
 | [协作规则](AGENTS.md) | 辅导方式、代码修改边界、模块检查和 Git 约定 |
 
@@ -25,7 +24,7 @@
 
 1. 在 Unity Hub 中添加本仓库根目录，使用 `6000.3.10f1` 打开。
 2. 如需查看初始场景，打开 `Assets/Scenes/SampleScene.unity`。当前 Build Settings 场景列表为空，不声称已配置构建。
-3. 教程视频和教师资料保留在本地教程目录，未随仓库上传。可在本地打开 `离线学习目录.html` 查阅。
+3. 学习参考资料不随仓库分发，可按教程目录中的课时编号查阅。
 
 `Packages/manifest.json` 包含 Input System `1.18.0` 和 UGUI `2.0.0`；当前启用新 Input System。教程 P50–P53 的配套源码使用旧输入 API，学习到这一部分时须核对兼容性，再决定采用方式。
 
