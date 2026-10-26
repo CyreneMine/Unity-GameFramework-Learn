@@ -2,7 +2,7 @@ using System;
 using System.Reflection;
 using UnityEngine;
 
-public class BaseManager<T> where T:class,new()
+public class BaseManager<T> where T:class
 {
     private static T instance;
     public static T Instance
@@ -24,7 +24,7 @@ public class BaseManager<T> where T:class,new()
                 else
                     Debug.Log("没有对应的无参构造函数");
             }
-                
+            
             return instance;
         }
     }
