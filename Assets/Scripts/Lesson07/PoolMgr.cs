@@ -8,7 +8,7 @@ public class PoolMgr : BaseManager<PoolMgr>
 
     public GameObject GetObj(string poolName)
     {
-        GameObject obj = new GameObject();
+        GameObject obj;
         if (poolDic.ContainsKey(poolName) && poolDic[poolName].Count > 0 )
         {
             obj = poolDic[poolName].Pop();
@@ -17,6 +17,7 @@ public class PoolMgr : BaseManager<PoolMgr>
         else
         {
             obj = GameObject.Instantiate(Resources.Load<GameObject>(poolName));
+            obj.name = poolName;
         }
         return obj;
     }
