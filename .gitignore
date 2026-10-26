@@ -1,0 +1,55 @@
+# Unity generated folders (any Unity root)
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Bb]uild/
+[Bb]uilds/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# IDE generated files and local settings
+.vs/
+.idea/
+.vscode/
+.gradle/
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# OS and local crash artifacts
+.DS_Store
+Thumbs.db
+Desktop.ini
+sysinfo.txt
+*.stacktrace
+
+# Local secrets; shared sanitized examples may be committed
+.env
+.env.*
+!.env.example
+
+# Local tutorial reference folders, if copied here later
+/视频/
+/文字课时/
+/资料/
+/离线学习目录.html
+/课程文件清单.csv
+/视频下载记录.json
+/资料下载记录.json
+/下载校验.json
