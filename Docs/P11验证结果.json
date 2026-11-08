@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "unityVersion": "6000.3.10f1",
+  "firstInstanceId": -1334,
+  "reusedInstanceId": -1334,
+  "checks": [
+    "Resources 预制体可加载",
+    "实例名称与完整资源键一致",
+    "首次获取仅增加一个激活对象",
+    "归还后对象失活",
+    "再次获取复用同一实例并激活",
+    "复用时没有额外创建空对象",
+    "两个同时借出的对象相互独立",
+    "清空记录后不再取到原缓存对象"
+  ],
+  "error": "",
+  "runDate": "2026-11-08",
+  "environment": "Unity batchmode Play Mode in isolated project copy",
+  "fixtureAuthor": "Agent"
+}
