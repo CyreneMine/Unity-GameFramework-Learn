@@ -6,6 +6,8 @@ public class PoolData
     private Stack<GameObject> stack = new Stack<GameObject>();
     private GameObject poolObj;
     public List<GameObject> usedList = new List<GameObject>();
+    private int maxNum;
+    public bool needCreate => usedList.Count < maxNum;
     public int Count => stack.Count;
     public PoolData(GameObject root,string name,GameObject obj)
     {
@@ -15,6 +17,13 @@ public class PoolData
             poolObj.transform.SetParent(root.transform);
         }
         PushUsedList(obj);
+        PoolObj poolObjScript = obj.GetComponent<PoolObj>();
+        if (poolObjScript == null)
+        {
+            Debug.LogError("请为要使用缓存池的预设体挂载PoolObj脚本");
+            return;
+        }
+        maxNum = poolObjScript.maxNum;
     }
     public GameObject Pop()
     {
@@ -57,7 +66,7 @@ public class PoolMgr : BaseManager<PoolMgr>
     private PoolMgr(){}
     private Dictionary<string, PoolData> poolDic = new Dictionary<string, PoolData>();
 
-    public GameObject GetObj(string poolName,int maxNum=50)
+    public GameObject GetObj(string poolName)
     {
         if (poolObj == null&&isOpenLayout)
             poolObj = new GameObject("Pool");
@@ -65,7 +74,7 @@ public class PoolMgr : BaseManager<PoolMgr>
         #region 有数量限制写法
 
         if (!poolDic.ContainsKey(poolName)||
-            poolDic[poolName].Count == 0 && poolDic[poolName].usedList.Count < maxNum)
+            poolDic[poolName].Count == 0 && poolDic[poolName].needCreate)
         {
             obj = GameObject.Instantiate(Resources.Load<GameObject>(poolName));
             obj.name = poolName;
