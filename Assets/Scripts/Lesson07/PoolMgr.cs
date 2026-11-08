@@ -11,26 +11,25 @@ public class PoolData
     public int Count => stack.Count;
     public PoolData(GameObject root,string name,GameObject obj)
     {
-        if (PoolMgr.Instance.isOpenLayout)
-        {
-            poolObj = new GameObject(name);
-            poolObj.transform.SetParent(root.transform);
-        }
-        PushUsedList(obj);
         PoolObj poolObjScript = obj.GetComponent<PoolObj>();
         if (poolObjScript == null)
         {
             Debug.LogError("请为要使用缓存池的预设体挂载PoolObj脚本");
             return;
         }
+        if (PoolMgr.Instance.isOpenLayout)
+        {
+            poolObj = new GameObject(name);
+            poolObj.transform.SetParent(root.transform);
+        }
+        PushUsedList(obj);
         maxNum = poolObjScript.maxNum;
     }
     public GameObject Pop()
     {
         GameObject obj;
-        if (Count > 0)//疑问？ 为什么这里还要判断Count>0 在外面GetObj的时候不是已经if里面写了非0的情况了 此刻的count一定不等于0
+        if (Count > 0)
         {
-            //疑问？ 如果进入的时候usedList已经满了此时在Add不就报错了吗
             obj = stack.Pop();
             usedList.Add(obj);
         }
@@ -51,8 +50,8 @@ public class PoolData
         if (PoolMgr.Instance.isOpenLayout)
             obj.transform.SetParent(poolObj.transform);
         obj.SetActive(false);
-        stack.Push(obj);
         usedList.Remove(obj);
+        stack.Push(obj);
     }
     public void PushUsedList(GameObject obj)
     {
